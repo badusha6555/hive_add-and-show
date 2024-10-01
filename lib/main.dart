@@ -8,12 +8,11 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await Hive
-      .initFlutter(); // Without path_provider, Flutter uses a default directory
+      .initFlutter(); 
 
-  // Register the ProfileModel adapter
   Hive.registerAdapter(ProfileModelAdapter());
 
-  // Open a box to store profile data
+
   await Hive.openBox<ProfileModel>('profileBox');
 
   runApp(MyApp());
